@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect } from "react";
-import { useAuthStore } from "@/entities/user/model/store/useAuthStore";
 import { useCookies } from "react-cookie";
+import { useAuthStore } from "@/entities/user/model/store";
 
 type Props = {
   children: React.ReactNode;

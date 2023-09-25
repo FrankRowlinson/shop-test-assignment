@@ -4,6 +4,6 @@ import { useMutation } from "@tanstack/react-query";
 export const useAuthenticate = () => {
   return useMutation({
     mutationKey: ["auth"],
-    mutationFn: (data: LoginUserRequest) => api.auth.loginUser(data),
+    mutationFn: (data: LoginUserRequest) => api.auth.loginUser(data, true),
   });
 };

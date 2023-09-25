@@ -6,17 +6,13 @@ export async function POST(request: NextRequest) {
   const response = await api.auth.loginUser(data);
 
   if (!response.token) {
-    return new NextResponse(
+    return NextResponse.json(
       JSON.stringify({ message: "Wrong login or password" }),
       { status: 401 }
     );
   }
 
-  const tokenResponse = new NextResponse(
-    JSON.stringify({ message: "Login was successful" }),
-    { status: 200 }
-  );
-
+  const tokenResponse = NextResponse.json({ status: 200 });
   tokenResponse.cookies.set("auth-token", response.token);
 
   return tokenResponse;
