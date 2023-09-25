@@ -1,1 +1,1 @@
-export { useAuthMutation } from "./useAuthMutation";
+export { useAuthenticate } from "./useAuthenticate";
