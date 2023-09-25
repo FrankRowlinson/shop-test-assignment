@@ -1,0 +1,3 @@
+export function UpdateProductForm() {
+  return <></>;
+}
