@@ -7,7 +7,7 @@ import {
   Heading,
   Highlight,
   Text,
-  LinkOverlay,
+  chakra,
 } from "@chakra-ui/react";
 import { Link } from "@chakra-ui/next-js";
 
@@ -15,8 +15,8 @@ export function Navbar() {
   const { isAuth } = useAuthStore();
 
   return (
-    <Flex w='100vw' px={4} h={16} shadow='md' align='center'>
-      <Heading size='md' as='p'>
+    <Flex w='100vw' px={8} h={16} shadow='md' align='center'>
+      <Heading size='md' as='a' href='/'>
         <Highlight
           query='Next Shop'
           styles={{ py: 2, px: 3, mr: 8, rounded: "full", bg: "blue.100" }}
@@ -24,9 +24,12 @@ export function Navbar() {
           Next Shop
         </Highlight>
       </Heading>
-      <Link href='/' flexGrow={1} textAlign={"left"}>
-        Главная
-      </Link>
+      <chakra.div display={["block", "none"]} flexGrow={1}></chakra.div>
+      <chakra.nav display={["none", "block"]} flexGrow={1}>
+        <Link href='/' textAlign={"left"}>
+          Главная
+        </Link>
+      </chakra.nav>
       {isAuth ? (
         <Text>Вы вошли</Text>
       ) : (
