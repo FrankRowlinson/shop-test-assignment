@@ -1,19 +1,10 @@
 "use client";
 
-import { useAuthStore } from "@/entities/user/model/store";
-import {
-  Button,
-  Flex,
-  Heading,
-  Highlight,
-  Text,
-  chakra,
-} from "@chakra-ui/react";
-import { Link } from "@chakra-ui/next-js";
+import { Flex, Heading, Highlight, chakra } from "@chakra-ui/react";
+import { Drawer } from "./drawer";
+import { AuthButtonLink, NavLinks } from "../navigation";
 
 export function Navbar() {
-  const { isAuth } = useAuthStore();
-
   return (
     <Flex w='100vw' px={8} h={16} shadow='md' align='center'>
       <Heading size='md' as='a' href='/'>
@@ -26,17 +17,14 @@ export function Navbar() {
       </Heading>
       <chakra.div display={["block", "none"]} flexGrow={1}></chakra.div>
       <chakra.nav display={["none", "block"]} flexGrow={1}>
-        <Link href='/' textAlign={"left"}>
-          Главная
-        </Link>
+        <NavLinks />
       </chakra.nav>
-      {isAuth ? (
-        <Text>Вы вошли</Text>
-      ) : (
-        <Button as='a' href='/auth' colorScheme='facebook'>
-          Войти
-        </Button>
-      )}
+      <chakra.div display={["none", "block"]}>
+        <AuthButtonLink />
+      </chakra.div>
+      <chakra.div display={["block", "none"]}>
+        <Drawer />
+      </chakra.div>
     </Flex>
   );
 }
