@@ -1,6 +1,5 @@
 "use client";
 
-import { Link } from "@chakra-ui/next-js";
 import {
   Drawer as ChakraDrawer,
   DrawerBody,
@@ -8,7 +7,6 @@ import {
   DrawerOverlay,
   DrawerContent,
   DrawerCloseButton,
-  Stack,
   DrawerHeader,
   IconButton,
   useDisclosure,
@@ -29,9 +27,7 @@ export function Drawer() {
           <DrawerCloseButton />
           <DrawerHeader></DrawerHeader>
           <DrawerBody>
-            <Stack spacing='2'>
-              <NavLinks />
-            </Stack>
+            <NavLinks />
           </DrawerBody>
           <DrawerFooter>
             <AuthButtonLink />

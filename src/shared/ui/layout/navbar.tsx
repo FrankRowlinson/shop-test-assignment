@@ -15,14 +15,17 @@ export function Navbar() {
           Next Shop
         </Highlight>
       </Heading>
-      <chakra.div display={["block", "none"]} flexGrow={1}></chakra.div>
-      <chakra.nav display={["none", "block"]} flexGrow={1}>
-        <NavLinks />
+      <chakra.div
+        display={["block", "block", "none"]}
+        flexGrow={1}
+      ></chakra.div>
+      <chakra.nav display={["none", "none", "block"]} flexGrow={1}>
+        <NavLinks direction='row' />
       </chakra.nav>
-      <chakra.div display={["none", "block"]}>
+      <chakra.div display={["none", "none", "block"]}>
         <AuthButtonLink />
       </chakra.div>
-      <chakra.div display={["block", "none"]}>
+      <chakra.div display={["block", "block", "none"]}>
         <Drawer />
       </chakra.div>
     </Flex>
