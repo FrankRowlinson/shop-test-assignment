@@ -60,6 +60,7 @@ export function ProductEditor({
           <FormLabel>Цена</FormLabel>
           <Input
             type="number"
+            step="0.01"
             {...register('price')}
             placeholder="Введите цену, $"
             autoComplete="off"
