@@ -10,6 +10,8 @@ export const cache = {
         return oldData?.filter((product) => product.id !== id);
       },
     );
+
+    queryClient.removeQueries(keys.GET_PRODUCT(id));
   },
 
   updateInCache: (id: number, newProduct: Product) => {

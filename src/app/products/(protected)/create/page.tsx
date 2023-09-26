@@ -1,4 +1,4 @@
-import { CreateProductForm } from "@/widgets/create-product";
+import { CreateProductForm } from '@/features/create-product';
 
 export default function CreatePage() {
   return (

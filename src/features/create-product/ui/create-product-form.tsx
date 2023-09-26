@@ -5,6 +5,7 @@ import { ProductEditor } from '@/features/product-editor';
 import { cache } from '@/entities/products/lib/react-query/cache';
 import { PostProductRequest } from '@/shared/api';
 import { useRouter } from 'next/navigation';
+import { Box } from '@chakra-ui/react';
 
 export function CreateProductForm() {
   const { mutate, isLoading } = usePostProduct();
@@ -24,8 +25,8 @@ export function CreateProductForm() {
   };
 
   return (
-    <>
+    <Box px="8" py="8" w={500} borderRadius={16} shadow="xl">
       <ProductEditor sendFormData={sendFormData} isLoading={isLoading} />
-    </>
+    </Box>
   );
 }

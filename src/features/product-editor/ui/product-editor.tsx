@@ -43,14 +43,7 @@ export function ProductEditor({
   };
 
   return (
-    <chakra.form
-      onSubmit={handleSubmit(onSubmit)}
-      px="8"
-      py="8"
-      w={500}
-      borderRadius={16}
-      shadow="xl"
-    >
+    <chakra.form onSubmit={handleSubmit(onSubmit)}>
       <Stack>
         <FormControl isInvalid={!!errors.title} isRequired>
           <FormLabel>Название товара</FormLabel>

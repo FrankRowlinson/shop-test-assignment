@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useProduct } from "@/entities/products/model/hooks";
-import { Loader } from "@/shared/ui/feedback";
-import { ProductView } from "@/entities/products";
+import { useProduct } from '@/entities/products/model/hooks';
+import { Loader } from '@/shared/ui/feedback';
+import { ProductView } from '@/entities/products';
 
 type Props = {
   params: Params;
