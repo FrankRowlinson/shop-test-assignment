@@ -21,7 +21,7 @@ export const cache = {
         );
       },
     );
-    queryClient.setQueryData(keys.GET_PRODUCT(id), () => newProduct);
+    queryClient.setQueryData(keys.GET_PRODUCT(id), newProduct);
   },
 
   addToCache: (id: number, newProduct: Product) => {
@@ -32,8 +32,6 @@ export const cache = {
       },
     );
 
-    queryClient.setQueryData(keys.GET_PRODUCT(id), () => {
-      return newProduct;
-    });
+    queryClient.setQueryData(keys.GET_PRODUCT(id), newProduct);
   },
 };
