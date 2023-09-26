@@ -1,10 +1,14 @@
+"use client";
+
 import { ProductList } from "@/entities/products";
-import { Flex } from "@chakra-ui/react";
+import { useProducts } from "@/entities/products/model/hooks";
+import { Loader } from "@/shared/ui/feedback";
 
 export default function Home() {
-  return (
-    <Flex maxW='5xl' minH='80dvh' align='center' justify='center' p={2}>
-      <ProductList />
-    </Flex>
-  );
+  const { data, isLoading } = useProducts();
+
+  if (isLoading || !data) {
+    return <Loader />;
+  }
+  return <ProductList products={data} />;
 }

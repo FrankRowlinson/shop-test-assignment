@@ -28,6 +28,8 @@ export const products = {
       url: `products/${id}`,
     });
 
+    console.log(response);
+
     return response.data;
   },
 

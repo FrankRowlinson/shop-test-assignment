@@ -1,17 +1,12 @@
-"use client";
-
-import { Loader } from "@/shared/ui/feedback/loader";
-import { useProducts } from "../model/hooks";
-import { Box, Container, Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import { ProductCard } from "./product-card";
+import { Products } from "@/shared/api";
 
-export function ProductList() {
-  const { data, isLoading } = useProducts();
+type Props = {
+  products: Products;
+};
 
-  if (isLoading) {
-    return <Loader />;
-  }
-
+export function ProductList({ products }: Props) {
   return (
     <Box alignSelf='flex-start' justifySelf='flex-start' w='100%'>
       <Heading mb={2}>Список товаров</Heading>
@@ -24,7 +19,7 @@ export function ProductList() {
           "repeat(4, 1fr)",
         ]}
       >
-        {data?.map((product) => (
+        {products.map((product) => (
           <GridItem key={product.id}>
             <ProductCard product={product} />
           </GridItem>

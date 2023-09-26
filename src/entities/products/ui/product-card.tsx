@@ -26,9 +26,11 @@ export function ProductCard({ product }: Props) {
           h={200}
           w='100%'
           objectFit='contain'
+          transition='all 0.2s ease'
+          _hover={{ transform: "scale(1.2)" }}
         />
         <Stack spacing='3' mt='6'>
-          <Heading as='h3' fontSize='md'>
+          <Heading as='a' href={`products/${product.id}`} fontSize='md'>
             {product.title}
           </Heading>
           <Text color='blue.400' fontSize='2xl'>
