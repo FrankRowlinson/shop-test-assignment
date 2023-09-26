@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { CacheProvider } from "@chakra-ui/next-js";
-import { ChakraProvider } from "@chakra-ui/react";
-import { AuthProvider } from "./auth-provider";
-import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "@/shared/lib/react-query";
-import { SnackbarProvider } from "notistack";
+import { CacheProvider } from '@chakra-ui/next-js';
+import { ChakraProvider } from '@chakra-ui/react';
+import { AuthProvider } from './auth-provider';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from '@/shared/lib/react-query';
+import { SnackbarProvider } from 'notistack';
 
 type Props = {
   children: React.ReactNode;

@@ -1,3 +1,3 @@
-import { LoginUserRequest } from "@/shared/api";
+import { LoginUserRequest } from '@/shared/api';
 
 export type AuthFieldValues = LoginUserRequest;

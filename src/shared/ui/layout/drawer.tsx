@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   Drawer as ChakraDrawer,
@@ -10,15 +10,15 @@ import {
   DrawerHeader,
   IconButton,
   useDisclosure,
-} from "@chakra-ui/react";
-import { AuthButtonLink, NavLinks } from "../navigation";
-import { HamburgerIcon } from "@chakra-ui/icons";
+} from '@chakra-ui/react';
+import { AuthButtonLink, NavLinks } from '../navigation';
+import { HamburgerIcon } from '@chakra-ui/icons';
 
 export function Drawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <IconButton aria-label='drawer' onClick={onOpen}>
+      <IconButton aria-label="drawer" onClick={onOpen}>
         <HamburgerIcon boxSize={6} />
       </IconButton>
       <ChakraDrawer isOpen={isOpen} onClose={onClose}>

@@ -1,2 +1,2 @@
-export * as api from "./endpoints";
-export type * from "./types";
+export * as api from './endpoints';
+export type * from './types';

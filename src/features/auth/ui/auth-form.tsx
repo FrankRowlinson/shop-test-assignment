@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import { useAuthenticate } from "@/entities/user/model/hooks";
+import { useAuthenticate } from '@/entities/user/model/hooks';
 import {
   Button,
   FormControl,
@@ -10,13 +10,13 @@ import {
   Input,
   Stack,
   chakra,
-} from "@chakra-ui/react";
-import { useRouter } from "next/navigation";
-import { useSnackbar } from "notistack";
-import { useForm } from "react-hook-form";
-import { AuthFieldValues } from "../types";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { schema } from "../schema";
+} from '@chakra-ui/react';
+import { useRouter } from 'next/navigation';
+import { useSnackbar } from 'notistack';
+import { useForm } from 'react-hook-form';
+import { AuthFieldValues } from '../types';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { schema } from '../schema';
 
 export function AuthForm() {
   const { enqueueSnackbar } = useSnackbar();
@@ -33,17 +33,17 @@ export function AuthForm() {
   const onSubmit = (formData: AuthFieldValues) => {
     mutate(formData, {
       onSuccess: () => {
-        enqueueSnackbar({ variant: "success", message: "Вы успешно вошли!" });
-        router.push("/");
+        enqueueSnackbar({ variant: 'success', message: 'Вы успешно вошли!' });
+        router.push('/');
       },
       onError: () => {
         enqueueSnackbar({
-          variant: "error",
-          message: "Неверно введен логин или пароль",
+          variant: 'error',
+          message: 'Неверно введен логин или пароль',
         });
       },
     });
-    reset({ password: "" });
+    reset({ password: '' });
   };
 
   return (
@@ -52,30 +52,30 @@ export function AuthForm() {
       <chakra.form
         onSubmit={handleSubmit(onSubmit)}
         px={[8, 16]}
-        py='8'
-        w={["100vw", "450px"]}
+        py="8"
+        w={['100vw', '450px']}
         borderRadius={16}
-        shadow='xl'
+        shadow="xl"
       >
         <Stack gap={2}>
           <FormControl isRequired isInvalid={!!errors.username}>
             <FormLabel>Логин</FormLabel>
-            <Input {...register("username")} placeholder='Введите логин...' />
+            <Input {...register('username')} placeholder="Введите логин..." />
             <FormErrorMessage>{errors.username?.message}</FormErrorMessage>
           </FormControl>
           <FormControl isRequired isInvalid={!!errors.password}>
             <FormLabel>Пароль</FormLabel>
             <Input
-              {...register("password")}
-              placeholder='********'
-              type='password'
+              {...register('password')}
+              placeholder="********"
+              type="password"
             />
             <FormErrorMessage>{errors.password?.message}</FormErrorMessage>
           </FormControl>
           <Button
-            type='submit'
+            type="submit"
             isLoading={isLoading}
-            colorScheme='facebook'
+            colorScheme="facebook"
             mt={4}
           >
             Войти

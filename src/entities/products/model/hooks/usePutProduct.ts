@@ -1,6 +1,6 @@
-import { useMutation } from "@tanstack/react-query";
-import { api, UpdateProductRequest } from "@/shared/api";
-import { keys } from "../query-keys";
+import { useMutation } from '@tanstack/react-query';
+import { api, UpdateProductRequest } from '@/shared/api';
+import { keys } from '../query-keys';
 
 export const usePutProduct = (id: number) => {
   return useMutation({

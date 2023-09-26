@@ -1,1 +1,1 @@
-export { useAuthenticate } from "./useAuthenticate";
+export { useAuthenticate } from './useAuthenticate';

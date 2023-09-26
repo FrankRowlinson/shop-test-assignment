@@ -1,5 +1,5 @@
-import { STORE_API_URL } from "../constants";
-import { httpClient } from "../http-client";
+import { STORE_API_URL } from '../constants';
+import { httpClient } from '../http-client';
 import {
   DeleteProductResponse,
   GetProductResponse,
@@ -8,14 +8,14 @@ import {
   PostProductResponse,
   UpdateProductRequest,
   UpdateProductResponse,
-} from "../types/products.types";
+} from '../types/products.types';
 
 export const products = {
   getProducts: async (): Promise<GetProductsResponse> => {
     const response = await httpClient({
       baseURL: STORE_API_URL,
-      method: "GET",
-      url: "products",
+      method: 'GET',
+      url: 'products',
     });
 
     return response.data;
@@ -24,22 +24,20 @@ export const products = {
   getProduct: async (id: number): Promise<GetProductResponse> => {
     const response = await httpClient({
       baseURL: STORE_API_URL,
-      method: "GET",
+      method: 'GET',
       url: `products/${id}`,
     });
-
-    console.log(response);
 
     return response.data;
   },
 
   postProduct: async (
-    data: PostProductRequest
+    data: PostProductRequest,
   ): Promise<PostProductResponse> => {
     const response = await httpClient({
       baseURL: STORE_API_URL,
-      method: "POST",
-      url: "products",
+      method: 'POST',
+      url: 'products',
       data: JSON.stringify(data),
     });
 
@@ -48,11 +46,11 @@ export const products = {
 
   putProduct: async (
     id: number,
-    data: UpdateProductRequest
+    data: UpdateProductRequest,
   ): Promise<UpdateProductResponse> => {
     const response = await httpClient({
       baseURL: STORE_API_URL,
-      method: "PUT",
+      method: 'PUT',
       url: `products/${id}`,
       data: JSON.stringify(data),
     });
@@ -63,7 +61,7 @@ export const products = {
   deleteProduct: async (id: number): Promise<DeleteProductResponse> => {
     const response = await httpClient({
       baseURL: STORE_API_URL,
-      method: "DELETE",
+      method: 'DELETE',
       url: `products/${id}`,
     });
 

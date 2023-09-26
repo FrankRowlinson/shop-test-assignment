@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { ProductList } from "@/entities/products";
-import { useProducts } from "@/entities/products/model/hooks";
-import { Loader } from "@/shared/ui/feedback";
+import { ProductList } from '@/entities/products';
+import { useProducts } from '@/entities/products/model/hooks';
+import { Loader } from '@/shared/ui/feedback';
 
 export default function Home() {
   const { data, isLoading } = useProducts();

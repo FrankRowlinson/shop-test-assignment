@@ -1,6 +1,6 @@
 export type Category =
-  | "electronics"
-  | "jewelery"
+  | 'electronics'
+  | 'jewelery'
   | "men's clothing"
   | "women's clothing";
 
@@ -18,7 +18,7 @@ export type Products = Product[];
 // === API ===
 
 // Requests
-export type PostProductRequest = Omit<Product, "id">;
+export type PostProductRequest = Omit<Product, 'id'>;
 export type UpdateProductRequest = Product;
 
 // Responses
